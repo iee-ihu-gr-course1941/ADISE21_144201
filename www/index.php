@@ -1,19 +1,19 @@
-<?php
+<?php include ('../lib/dbconnect.php') ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Moutzouris Game</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="header">
+        <h2>Μουτζούρης</h2>
+    </div>
 
-require_once "../lib/dbconnect.php";
-
-
-echo "This line from php...";
-
-$sql = "select * from cards";
-
-$st = $mysqli->prepare($sql);
-
-$st->execute();
-$res = $st->get_result();
-
-$r = $res->fetch_assoc();
-
-print "card_name: $r[cname], card_shape: $r[cshape]";
-
-?>
+<form method="post" action="register.php">
+    <div class="input-group">
+        <button  type="submit" class="btn2" name="go_register">Let's Start</button>
+    </div>
+</form>
+</body>
+</html>
